@@ -18,7 +18,16 @@ def postorder(root):
         # Traverse root
         print(str(root.val) + "->", end='')
 
+def inorder(root):
 
+    if root:
+        # Traverse left
+        inorder(root.left)
+        # Traverse root
+        print(str(root.val) + "->", end='')
+        # Traverse right
+        inorder(root.right)
+        
 def preorder(root):
 
     if root:
@@ -45,6 +54,9 @@ root.right.right.left = Node("4")
 
 print("\nPreorder traversal ")
 preorder(root)
+
+print("Inorder traversal ")
+inorder(root)
 
 print("\nPostorder traversal ")
 postorder(root)
